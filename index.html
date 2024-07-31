@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Bootcamp Widgets</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    
+            
+                <div class="container">
+                    <h1>AlpineJS Bootcamp Widgets</h1>
+                    <div id="widgets">
+                        <div x-data="greet()" class="widget">
+                            <h2>Greet Function</h2>
+                            <input type="text" x-model="name" placeholder="Enter your name">
+                            <select x-model="language">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                            </select>
+                            <button @click="greet()">Greet</button>
+                            <p x-text="greeting"></p>
+                        </div>
+            
+                        <div x-data="transportFee()" class="widget">
+                            <h2>Transport Fee Function</h2>
+                            <label><input type="radio" x-model="shift" value="morning"> Morning</label>
+                            <label><input type="radio" x-model="shift" value="afternoon"> Afternoon</label>
+                            <label><input type="radio" x-model="shift" value="nightshift"> Nightshift</label>
+                            <button @click="calculateFee()">Calculate Fee</button>
+                            <p x-text="fee"></p>
+                        </div>
+            
+                        <div x-data="totalPhoneBill()" class="widget">
+                            <h2>Total Phone Bill Function</h2>
+                            <input type="text" x-model="phoneUsage" placeholder="Enter phone usage (call,sms)">
+                            <button @click="calculateBill()">Calculate Bill</button>
+                            <p>Total: R<span x-text="total"></span></p>
+                        </div>
+            
+                        <div x-data="enoughAirtime()" class="widget">
+                            <h2>Enough Airtime Function</h2>
+                            <input type="text" x-model="usage" placeholder="Enter usage (call,sms,data)">
+                            <input type="number" x-model="available" placeholder="Enter available airtime">
+                            <button @click="calculateAirtime()">Calculate</button>
+                            <p x-text="result"></p>
+                        </div>
+                    </div>
+                </div>
+                <script src="greet.js"></script>
+                <script src="transportFee.js"></script>
+                <script src="totalPhoneBill.js"></script>
+                <script src="enoughAirtime.js"></script>
+                <script src="index.js"></script>
+        
+            
+        </div>
+    </div>
+</body>
+</html>
